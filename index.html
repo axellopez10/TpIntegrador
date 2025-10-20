@@ -5,11 +5,143 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>INTEGRADOR</title>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: beige;
+        }
+
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            background-color: #333333;
+            display: flex;
+        }
+
+        ul li a {
+
+            display: block;
+            margin-right: 35px;
+            color: white;
+            padding: 14px 16px;
+            text-decoration: none;
+
+        }
+
+        ul li a:hover {
+            background-color: #111111;
+        }
+
+        p {
+            font-weight: bold;
+            padding: 5px;
+            font-size: 18px;
+            text-align: center;
+        }
+    </style>
+
+
+
+
 </head>
 
 <body>
 
-    <h1>INTEGRADOR</h1>
+
+
+
+    <script>
+
+        let imagenesArray = [
+
+            'https://img.freepik.com/psd-gratis/refrigerador-puerta-francesa-acero-inoxidable-elegante_632498-25861.jpg?semt=ais_hybrid&w=740&q=80',
+            'https://img.freepik.com/vector-gratis/horno-microondas-luz-interior-aislado-sobre-fondo-blanco-electrodomesticos-cocina_134830-658.jpg?semt=ais_hybrid&w=740&q=80',
+            'https://media.istockphoto.com/id/1463361334/es/foto/m%C3%A1quina-de-lavado.jpg?s=612x612&w=0&k=20&c=yWaU3hQ7x7XK74aLwq4GKr8U7iFs_JWFLI8jx56dzqw='
+
+        ]
+
+        let indiceImagenes = 0;
+
+        function carrousel() {
+
+
+
+
+
+            let imagenes = document.getElementById("imagenes");
+
+
+            imagenes.alt = "imagen.png"
+            imagenes.src = imagenesArray[indiceImagenes];
+            indiceImagenes++;
+
+
+
+
+
+            // for (let aux = 0; aux <= imagenes.length; aux++) {
+
+            //     let imagenes = document.getElementById("imagenes");
+
+            //     imagenes.src = imagenes[aux];
+            // }
+
+
+
+
+
+
+        }
+
+
+
+
+    </script>
+
+
+
+    <!-- electrodomesticos -->
+
+
+    <ul>
+        <li><a href="formulario.html">Formulario</a></li>
+        <li><a href="articulo.html">Articulo</a></li>
+    </ul>
+
+    <p>
+
+        Bienvenido a ElectroHogar
+        En ElectroHogar nos especializamos en ofrecerte los mejores electrodomésticos para tu hogar, con calidad
+        garantizada y precios accesibles.
+        Encontrá desde pequeños artículos de cocina hasta grandes equipos como heladeras, lavarropas, microondas y
+        televisores.
+        ⚙️ Nuestra misión
+        Facilitar tu vida diaria con productos que combinan tecnología, eficiencia y diseño moderno.
+        Nos esforzamos por brindarte una experiencia de compra segura, rápida y con atención personalizada.
+        🛒 ¿Por qué elegirnos?
+        Amplia variedad de marcas reconocidas.
+        Envíos a todo el país.
+        Promociones y descuentos semanales.
+        Atención al cliente todos los días.
+
+        <button onclick="carrousel()">Atras</button>
+
+
+        <img id="imagenes" src="" alt="">
+
+
+
+
+
+    </p>
+
+
+
+
 
 </body>
 
