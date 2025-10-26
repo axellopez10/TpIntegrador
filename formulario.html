@@ -6,38 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            background-color: beige;
-        }
-
-
-
-        ul {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-            background-color: #333333;
-            display: flex;
-        }
-
-        ul li a {
-
-            display: block;
-            color: white;
-            padding: 14px 16px;
-            text-decoration: none;
-            margin-right: 35px;
-
-
-        }
-
-        ul li a:hover {
-            background-color: #111111;
-        }
-    </style>
+    <link rel="stylesheet" href="./css/estilo.css">
 
 
 
@@ -51,6 +20,57 @@
         <li><a href="index.html">Principal</a></li>
         <li><a href="articulo.html">Articulo</a></li>
     </ul>
+
+
+
+    <div class="contenedor">
+        <form action="formulario.html" target="_self" novalidate>
+
+
+            <div class="items">
+                <label for="name">Nombre:</label>
+                <input type="text" name="name">
+
+            </div>
+
+
+
+            <div class="items">
+                <label for="apellido">Apellido:</label>
+                <input type="text" name="apellido">
+
+            </div>
+
+            <div class="items">
+
+                <label for="mail">Mail:</label>
+                <input type="email" name="mail">
+
+            </div>
+
+            <div class="items">
+                <label for="telefono">Telefono:</label>
+                <input type="tel" name="telefono">
+            </div>
+
+            <div class="buttons">
+
+                <button> Enviar</button>
+                <input type="reset" name="reset">
+
+            </div>
+
+
+
+
+
+
+
+
+        </form>
+    </div>
+
+
 
 
 
