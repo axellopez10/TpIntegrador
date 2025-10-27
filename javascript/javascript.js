@@ -9,38 +9,41 @@ let imagenesArray = [
 
 ]
 
-let indiceImagenes = -1;
+let indice = 0;
+const img = document.getElementById("imagenes");
+img.src = imagenesArray[indice];
 
-function carrousel() {
+function siguiente() {
+    indice++;
+    if (indice < imagenesArray.length) {
+        /*si pasa del final,vuelve al principio */
 
+        img.alt = "imagen.png";
+        img.src = imagenesArray[indice];
 
-
-
-    let imagenes = document.getElementById("imagenes");
-
-
-    imagenes.alt = "imagen.png"
-    imagenes.src = imagenesArray[indiceImagenes];
-    indiceImagenes++;
-
-
-
-
-
-    // for (let aux = 0; aux <= imagenes.length; aux++) {
-
-    //     let imagenes = document.getElementById("imagenes");
-
-    //     imagenes.src = imagenes[aux];
-    // }
-
-
-
-
+    } else {
+        indice = 0;
+        img.alt = "imagen.png";
+        img.src = imagenesArray[indice];
+    }
 
 
 }
+function anterior() {
+    indice--; /* 0 , -1*/
+    if (indice >= 0) {
+        /*si llega al principio vuelve al final */
 
+        img.alt = "imagen.png";
+        img.src = imagenesArray[indice];
+    } else {
+        indice = imagenesArray.length - 1;
+        img.alt = "imagen.png";
+        img.src = imagenesArray[indice];
+    }
+
+
+}
 
 
 
