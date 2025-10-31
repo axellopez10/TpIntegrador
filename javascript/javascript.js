@@ -1,4 +1,5 @@
 
+
 let imagenesArray = [
 
 
@@ -7,15 +8,13 @@ let imagenesArray = [
     "./images/microondas.png",
     "./images/secadora.png",
     "./images/conjunto.png"
-                   
-    
-    
 
 
 
-    // 'https://img.freepik.com/psd-gratis/refrigerador-puerta-francesa-acero-inoxidable-elegante_632498-25861.jpg?semt=ais_hybrid&w=740&q=80',
-    // 'https://img.freepik.com/vector-gratis/horno-microondas-luz-interior-aislado-sobre-fondo-blanco-electrodomesticos-cocina_134830-658.jpg?semt=ais_hybrid&w=740&q=80',
-    // 'https://media.istockphoto.com/id/1463361334/es/foto/m%C3%A1quina-de-lavado.jpg?s=612x612&w=0&k=20&c=yWaU3hQ7x7XK74aLwq4GKr8U7iFs_JWFLI8jx56dzqw='
+
+
+
+
 
 ]
 
@@ -54,6 +53,31 @@ function anterior() {
 
 
 }
+function validacion() {
+    const nombre = document.getElementById('nombre');
+    const apellido = document.getElementById('apellido');
+    const email = document.getElementById('emailid');
+    const telefono = documento.getElementById('telefono');
 
+
+    let bandera = true;
+    if (nombre.value == "" || nombre.value.length > 40) {
+        bandera = false;
+        let errornombre = document.getElementById("errornombre");
+        errornombre.style.display = "block";
+    }
+    if (apellido.value == "" || apellido.value.length > 40) {
+        bandera = false;
+        let errorapellido = document.getElementById("errorapellido");
+        errorapellido.style.display = "block";
+    }
+    let expRegular = /∧(\w|-)+@(gmail|hotmail|yahoo)(\.com|\.edu|\.ar){1,2}-$/;
+    if (email.value == "" || email.value != expRegular) {
+        bandera = false;
+        let erroremail = document.getElementById('erroremail')
+        erroremail.style.display = "block";
+    }
+    return bandera;
+}
 
 
