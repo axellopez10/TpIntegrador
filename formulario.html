@@ -25,13 +25,13 @@
 
     <div class="contenedor">
 
-        <form action="formulario.html" target="_self" novalidate>
+        <form action="formulario.html" target="_self" novalidate onsubmit="return validacion()">
 
 
             <div class="items">
                 <label for="nombre">Nombre:</label>
                 <input type="text" id="nombre" name="nombre" placeholder="Ingrese su nombre">
-                <span style="display:none;" id="errornombre">nombre invalido</span>
+                <span style="display:none;" id="errorNombre">*nombre invalido</span>
             </div>
 
 
@@ -39,38 +39,37 @@
             <div class="items">
                 <label for="apellido">Apellido:</label>
                 <input type="text" id="apellido" name="apellido" placeholder="Ingrese su apellido">
-                <span style="display:none;" id="errorapellido">apellido invalido</span>
+                <span style="display:none;" id="errorApellido">*apellido invalido</span>
             </div>
 
             <div class="items">
 
                 <label for="emailid">Mail:</label>
-                <input type="email" id="emailid" name="mail">
-                <span style="display:none;" id="erroremail">email invalido</span>
+                <input type="email" id="emailid" name="emailid">
+                <span style="display:none;" id="errorEmail">*email invalido</span>
 
             </div>
 
             <div class="items">
                 <label for="telefono">Telefono:</label>
                 <input type="tel" id="telefono" name="telefono">
-                <span style="display:none;" id="errortelefono">telefono invalido</span>
+                <span style="display:none;" id="errorTelefono">*telefono invalido</span>
             </div>
 
             <div class="buttons">
 
-                <button onclick="return validacion()" class="boton"> Enviar</button>
+                <button class="boton"> Enviar</button>
                 <input class="boton" id="boton" type="reset" name="reset">
 
             </div>
 
-
-
-
-
-
-
-
         </form>
+
+
+    </div>
+
+    <div id="resultados">
+
 
     </div>
 

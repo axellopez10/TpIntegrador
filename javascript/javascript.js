@@ -20,9 +20,17 @@ let imagenesArray = [
 
 let indice = 0;
 const img = document.getElementById("imagenes");
-img.src = imagenesArray[indice];
+
+if (img) {
+
+    img.src = imagenesArray[indice];
+
+
+}
+
 
 function siguiente() {
+    if (!img) return;
     indice++;
     if (indice < imagenesArray.length) {
         /*si pasa del final,vuelve al principio */
@@ -39,6 +47,7 @@ function siguiente() {
 
 }
 function anterior() {
+    if (!img) return;
     indice--; /* 0 , -1*/
     if (indice >= 0) {
         /*si llega al principio vuelve al final */
@@ -54,30 +63,70 @@ function anterior() {
 
 }
 function validacion() {
+
+    //primero tengo los ids
     const nombre = document.getElementById('nombre');
     const apellido = document.getElementById('apellido');
     const email = document.getElementById('emailid');
-    const telefono = documento.getElementById('telefono');
+    const telefono = document.getElementById('telefono');
 
 
-    let bandera = true;
+
+    //despues hago los controles
+    let bandera = false;
+
     if (nombre.value == "" || nombre.value.length > 40) {
-        bandera = false;
-        let errornombre = document.getElementById("errornombre");
-        errornombre.style.display = "block";
+
+        let errorNombre = document.getElementById("errorNombre");
+        errorNombre.style.display = "block";
+        bandera = true;
     }
     if (apellido.value == "" || apellido.value.length > 40) {
+
+        let errorApellido = document.getElementById("errorApellido");
+        errorApellido.style.display = "block";
         bandera = false;
-        let errorapellido = document.getElementById("errorapellido");
-        errorapellido.style.display = "block";
     }
-    let expRegular = /∧(\w|-)+@(gmail|hotmail|yahoo)(\.com|\.edu|\.ar){1,2}-$/;
-    if (email.value == "" || email.value != expRegular) {
-        bandera = false;
-        let erroremail = document.getElementById('erroremail')
-        erroremail.style.display = "block";
+    let expRegular = /^(\w|-)+@(gmail|hotmail|yahoo)(\.com|\.edu|\.ar){1,2}$/;
+    if (email.value == "" || !expRegular.test(email.value)) {
+        let errorEmail = document.getElementById('errorEmail')
+        errorEmail.style.display = "block";
+        bandera = true;
     }
-    return bandera;
+
+    let expRegularTel = /^[0-9]{4}-[0-9]{6}$/ //formato ej: 2665-589474
+
+    if (telefono.value == "" || !expRegularTel.test(telefono.value)) {
+
+        let errorTelefono = document.getElementById("errorTelefono");
+
+        errorTelefono.style.display = "block";
+
+        bandera = true;
+
+
+    }
+
+    if (!bandera) {
+
+        const resultados = document.getElementById("resultados");
+        let articulo = document.createElement("h2");
+
+        articulo.innerHTML = `el usuario ${nombre.value} con email ${email.value} se creo con exito!`
+        resultados.appendChild(articulo);
+
+
+
+
+
+
+    }
+
+
+
+    return false;
+
+
 }
 
 
