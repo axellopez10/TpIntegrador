@@ -70,8 +70,10 @@ function validacion() {
     const email = document.getElementById('emailid');
     const telefono = document.getElementById('telefono');
 
-
-
+    document.getElementById("errorNombre").style.display = "none";
+    document.getElementById("errorApellido").style.display = "none";
+    document.getElementById("errorEmail").style.display = "none";
+    document.getElementById("errorTelefono").style.display = "none";
     //despues hago los controles
     let bandera = false;
 
@@ -85,7 +87,7 @@ function validacion() {
 
         let errorApellido = document.getElementById("errorApellido");
         errorApellido.style.display = "block";
-        bandera = false;
+        bandera = true;
     }
     let expRegular = /^(\w|-)+@(gmail|hotmail|yahoo)(\.com|\.edu|\.ar){1,2}$/;
     if (email.value == "" || !expRegular.test(email.value)) {
