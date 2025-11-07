@@ -124,6 +124,8 @@
      align-items: center;
 
 
+
+
  }
 
  .botones {
@@ -155,6 +157,7 @@
      justify-content: center;
      gap: 10px;
      padding: 20px;
+
 
 
  }
@@ -196,6 +199,31 @@
      height: 50px;
      filter: drop-shadow(0 0 4px rgba(0, 0, 0, 0.4));
      /*Agrega un sombra suave detras de la flecha*/
+ }
+
+ #infoProducto {
+     text-align: center;
+     margin-top: 20px;
+
+
+ }
+
+ #infoProducto h3 {
+     margin: 10px 0 5px;
+     color: black;
+     font-size: 22px;
+ }
+
+ #infoProducto p {
+     font-size: 16px;
+     color: #333;
+     margin: 5px 0;
+ }
+
+ #infoProducto .precio {
+     color: green;
+     font-weight: bold;
+     font-size: 18px;
  }
 
  .producto {
