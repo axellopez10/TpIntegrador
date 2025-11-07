@@ -20,6 +20,7 @@
             <button class="categoria-btn" onclick="filtrar('hogar')">Hogar</button>
             <button class="categoria-btn" onclick="filtrar('cocina')">Cocina</button>
             <button class="categoria-btn" onclick="filtrar('higiene')">Higiene</button>
+            <button id="btnCarrito" class="btn-carrito">Carrito</button>
         </div>
 
         <h1>Productos destacados</h1>
@@ -33,6 +34,7 @@
                 <h3>Heladera Philco</h3>
                 <p>Eficiencia energetica +A</p>
                 <p class="precio">$420.000</p>
+                <button class="add-carrito" data-nombre="heladera" data-precio="420.000">Añadir al carrito</button>
 
             </div>
 
@@ -43,7 +45,7 @@
                 <h3>Lavarropa Drean</h3>
                 <p>Eficiencia energetica +++A, AUTOMATICO</p>
                 <p class="precio">$724.000</p>
-
+                <button class="add-carrito" data-nombre="lavarropa" data-precio="724.000">Añadir al carrito</button>
 
 
 
@@ -55,7 +57,7 @@
                 <h3>microondas BGH</h3>
                 <p>Con descongelado automático por peso.</p>
                 <p class="precio">$298.000</p>
-
+                <button class="add-carrito" data-nombre="microondas" data-precio="298.000">Añadir al carrito</button>
 
             </div>
             <div class="producto" data-cat="cocina">
@@ -65,6 +67,16 @@
                 <h3>Philips Airfryer XL Essential Connected Rapid Air 6,2 L (modelo HD9280/90)</h3>
                 <p>freidora de aire Peabody 4L</p>
                 <p class="precio">$ 449.999</p>
+                <button class="add-carrito" data-nombre="Airfryer" data-precio="449.999">Añadir al carrito</button>
+            </div>
+            <div class="producto" data-cat="cocina">
+                <img src="./images/conjunto.png" alt="conjunto">
+
+                <h3>Combo Cocina Moderna: ¡equipate y ahorrá!</h3>
+                <p>El combo completo para tu cocina</p>
+                <p class="precio">$249.999</p>
+                <button class="add-carrito" data-nombre="conjunto" data-precio="249.999">Añadir al carrito</button>
+
             </div>
             <div class="producto" data-cat="hogar">
 
@@ -73,11 +85,38 @@
                 <h3>Samsung Smart TV 55''</h3>
                 <p>Crystal UHD 4K (AU7000)</p>
                 <p class="precio">$599.999</p>
+                <button class="add-carrito" data-nombre="televisor" data-precio="599.999">Añadir al carrito</button>
+            </div>
+            <div class="producto" data-cat="hogar">
+
+                <img src="./images/pngwingParlante.com.png" alt="parlante">
+
+                <h3>Parlante Blaster Gamer</h3>
+                <p>sonido potente RGB</p>
+                <p class="precio">$99.999</p>
+                <button class="add-carrito" data-nombre="parlante" data-precio="99.999">Añadir al carrito</button>
+            </div>
+            <div class="producto" data-cat="higiene">
+
+                <img src="./images/pngwinglavadora.com.png" alt="lavadora">
+
+                <h3>Lavarropas Drean Next 6.06 Eco</h3>
+                <p>Automático 6kg bajo consumo</p>
+                <p class="precio">$380.000</p>
+                <button class="add-carrito" data-nombre="lavadora" data-precio="380.000">Añadir al carrito</button>
+            </div>
+            <div class="producto" data-cat="higiene">
+
+                <img src="./images/secadora.png" alt="secadora">
+
+                <h3>Secadora Drean Family 60</h3>
+                <p>Secadora eléctrica 6kg compacta</p>
+                <p class="precio">$320.000</p>
+                <button class="add-carrito" data-nombre="secadora" data-precio="320.000">Añadir al carrito</button>
             </div>
 
-
-
         </div>
+
 
         <div class="footer">
             <p>© 2025 ElectroHogar — Todos los derechos reservados.</p>
