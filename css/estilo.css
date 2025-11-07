@@ -117,7 +117,7 @@
 
  }
 
- .imagenes {
+ .contenedorImagenes {
 
      display: flex;
      justify-content: center;
@@ -157,6 +157,45 @@
      padding: 20px;
 
 
+ }
+
+ /*la imagenes principal que esta en el contenedor */
+
+ .contenedorImagenes img#imagenes {
+     width: 300px;
+     height: auto;
+     object-fit: contain;
+     transition: transform 0.3s ease, opacity 0.3s ease;
+     /*hace la transicion de agrandarse suavemente y desvanecerse suavemnte*/
+ }
+
+
+
+ /*al pasar por encima de la imagenen la agranda 5%  */
+ .contenedorImagenes img#imagenes:hover {
+     transform: scale(1.05);
+ }
+
+ /*  Botones de flechas */
+ .flecha {
+     background: none;
+     border: none;
+     cursor: pointer;
+     transition: transform 0.2s ease;
+ }
+
+ /*al pasar por la flecha hace un efecto del 10%*/
+
+ .flecha:hover {
+     transform: scale(1.1);
+ }
+
+ /*  Imágenes dentro de los botones */
+ .flecha img {
+     width: 50px;
+     height: 50px;
+     filter: drop-shadow(0 0 4px rgba(0, 0, 0, 0.4));
+     /*Agrega un sombra suave detras de la flecha*/
  }
 
  .producto {
