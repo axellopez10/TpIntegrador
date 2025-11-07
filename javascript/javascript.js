@@ -89,7 +89,7 @@ function validacion() {
         errorApellido.style.display = "block";
         bandera = true;
     }
-    let expRegular = /^(\w|-)+@(gmail|hotmail|yahoo)(\.com|\.edu|\.ar){1,2}$/;
+    let expRegular = /^(\w|-)+@(sanluis|gmail|hotmail|yahoo)(\.com|\.edu|\.ar){1,2}$/;
     if (email.value == "" || !expRegular.test(email.value)) {
         let errorEmail = document.getElementById('errorEmail')
         errorEmail.style.display = "block";
