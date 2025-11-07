@@ -130,5 +130,19 @@ function validacion() {
 
 
 }
+function filtrar(categoria) {
+    const productos = document.querySelectorAll('.producto');
 
+    productos.forEach(p => {
+        const cate = p.getAttribute('data-cat')
+
+        if (categoria === 'todos') {
+            p.style.display = 'flex';
+        } else if (cate === categoria) {
+            p.style.display = 'flex';
+        } else {
+            p.style.display = 'none';
+        }
+    });
+}
 
