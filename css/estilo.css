@@ -401,11 +401,13 @@
      background: transparent;
      padding: 0;
      margin: 0;
+     display: block;
+     flex-direction: column;
  }
 
  #listaCarrito li {
      background-color: #0fb9c5;
-     display: flex;
+     display: block;
      color: white;
      justify-content: space-between;
      padding: 10px;
