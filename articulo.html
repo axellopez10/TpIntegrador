@@ -20,7 +20,7 @@
             <button class="categoria-btn" onclick="filtrar('hogar')">Hogar</button>
             <button class="categoria-btn" onclick="filtrar('cocina')">Cocina</button>
             <button class="categoria-btn" onclick="filtrar('higiene')">Higiene</button>
-            <button id="btnCarrito" class="btn-carrito">Carrito</button>
+            <button id="btnCarrito" class="btn-carrito" onclick="mostrarCarrito()">Carrito</button>
         </div>
 
         <h1>Productos destacados</h1>
@@ -127,9 +127,20 @@
             </p>
         </div>
 
+        <div id="carritoModal" class="carrito-modal">
+            <div class="carrito-contenido">
+                <h2>Mi carrito</h2>
+
+                <ul id="listaCarrito"></ul>
+
+                <h3 id="totalCarrito">Total: $0</h3>
+
+                <button id="cerrarCarrito" class="cerrar" onclick="cerrarCarrito()">Cerrar</button>
+            </div>
+        </div>
         <script src="javascript/javascript.js"></script>
 
-
+        <div id="toast" class="toast"></div>
 </body>
 
 </html>

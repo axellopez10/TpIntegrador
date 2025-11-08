@@ -145,4 +145,74 @@ function filtrar(categoria) {
         }
     });
 }
+if (document.getElementById("carritoModal")) {
+    let carritoArray = [];
+    document.addEventListener("click", function (e) {
+        if (e.target.classList.contains("add-carrito")) {
+            let nombre = e.target.getAttribute("data-nombre");
+            let precioStr = e.target.getAttribute("data-precio");
 
+            let precio = parseInt(precioStr.replace(/\./g, ''), 10);
+            carritoArray.push({ nombre, precio });
+
+            mostrarToast(nombre + " fue añadido al carrito");
+            renderCarrito();
+        }
+    });
+    const btnCarrito = document.getElementById('btnCarrito');
+    const btnCerrarCarrito = document.getElementById('cerrarCarrito')
+    const modalCarrito = document.getElementById("carritoModal");
+    const listaCarrito = document.getElementById("listaCarrito");
+    const totalCarrito = document.getElementById("totalCarrito");
+
+    function mostrarCarrito() {
+        modalCarrito.style.display = "flex";
+        renderCarrito();
+    }
+    function cerrarCarrito() {
+        modalCarrito.style.display = "none";
+    }
+    function formatearPrecio(numero) {
+        return '$' + numero.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+    }
+
+    if (btnCerrarCarrito) {
+        btnCerrarCarrito.addEventListener('click', cerrarCarrito)
+    }
+
+    function renderCarrito() {
+        listaCarrito.innerHTML = '';
+        let total = 0;
+
+        carritoArray.forEach((item, i) => {
+            let li = document.createElement("li");
+            li.textContent = `${item.nombre} - $${(item.precio)}`;
+            let btnX = document.createElement('button');
+            btnX.textContent = 'X';
+            btnX.style.marginLeft = '10px';
+            btnX.onclick = function () {
+                carritoArray.splice(i, 1);
+                renderCarrito();
+            };
+            li.appendChild(btnX);
+            listaCarrito.appendChild(li);
+
+            total += item.precio;
+        });
+        totalCarrito.textContent = "Total: $" + total;
+    }
+    btnCarrito.addEventListener("click", mostrarCarrito);
+    btnCerrarCarrito.addEventListener("click", cerrarCarrito);
+    modalCarrito.addEventListener("click", function (e) {
+        if (e.target === modalCarrito) cerrarCarrito();
+    });
+}
+function mostrarToast(texto) {
+    const toast = document.getElementById("toast");
+    toast.textContent = texto;
+    toast.classList.add("show");
+
+    setTimeout(() => {
+        toast.classList.remove("show");
+    }, 1500);
+}
