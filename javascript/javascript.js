@@ -1,67 +1,75 @@
 
-
-let imagenesArray = [
-
-
-    "./images/heladera.png",
-    "./images/lavarropa.png",
-    "./images/microondas.png",
-    "./images/secadora.png",
-    "./images/conjunto.png"
-
-
-
-
-
-
-
-
-]
+let productos = [
+    {
+        imagen: "./images/heladera.png",
+        nombre: "Heladera Philco",
+        descripcion: "Eficiencia energética +A",
+        precio: "$420.000"
+    },
+    {
+        imagen: "./images/lavarropa.png",
+        nombre: "Lavarropa Drean",
+        descripcion: "Eficiencia energética +++A, AUTOMÁTICO",
+        precio: "$724.000"
+    },
+    {
+        imagen: "./images/microondas.png",
+        nombre: "Microondas BGH",
+        descripcion: "Con descongelado automático por peso.",
+        precio: "$298.000"
+    },
+    {
+        imagen: "./images/secadora.png",
+        nombre: "Secadora Drean Family 60",
+        descripcion: "Secadora eléctrica 6kg compacta",
+        precio: "$320.000"
+    },
+    {
+        imagen: "./images/conjunto.png",
+        nombre: "Combo Cocina Moderna",
+        descripcion: "El combo completo para tu cocina",
+        precio: "$249.999"
+    }
+];
 
 let indice = 0;
 const img = document.getElementById("imagenes");
+const nombreProducto = document.getElementById("nombreProducto");
+const descripcionProducto = document.getElementById("descripcionProducto");
+const precioProducto = document.getElementById("precioProducto");
 
-if (img) {
-
-    img.src = imagenesArray[indice];
-
-
+// Función que actualiza todo el contenido
+function mostrarProducto(i) {
+    const producto = productos[i];
+    img.src = producto.imagen;
+    nombreProducto.textContent = producto.nombre;
+    descripcionProducto.textContent = producto.descripcion;
+    precioProducto.textContent = producto.precio;
 }
 
+// Mostrar el primero al cargar
+if (img) {
+    mostrarProducto(indice);
+}
 
 function siguiente() {
     if (!img) return;
     indice++;
-    if (indice < imagenesArray.length) {
-        /*si pasa del final,vuelve al principio */
-
-        img.alt = "imagen.png";
-        img.src = imagenesArray[indice];
-
-    } else {
-        indice = 0;
-        img.alt = "imagen.png";
-        img.src = imagenesArray[indice];
-    }
-
-
+    if (indice >= productos.length) indice = 0;
+    mostrarProducto(indice);
 }
+
 function anterior() {
     if (!img) return;
-    indice--; /* 0 , -1*/
-    if (indice >= 0) {
-        /*si llega al principio vuelve al final */
-
-        img.alt = "imagen.png";
-        img.src = imagenesArray[indice];
-    } else {
-        indice = imagenesArray.length - 1;
-        img.alt = "imagen.png";
-        img.src = imagenesArray[indice];
-    }
-
-
+    indice--;
+    if (indice < 0) indice = productos.length - 1;
+    mostrarProducto(indice);
 }
+
+
+
+
+
 function validacion() {
 
     //primero tengo los ids
